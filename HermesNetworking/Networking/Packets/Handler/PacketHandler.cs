@@ -2,7 +2,7 @@
 using HermesNetworking.Networking.Packets.Parser;
 
 /* Converts and delegates the action of packet. */
-namespace HermesNetworking.Networking.Packets.Listener
+namespace HermesNetworking.Networking.Packets.Handler
 {
     public class PacketHandler
     {

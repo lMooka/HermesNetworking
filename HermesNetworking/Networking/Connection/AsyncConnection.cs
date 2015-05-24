@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Net.Sockets;
 using HermesNetworking.Networking.Packets;
-using HermesNetworking.Networking.Packets.Listener;
+using HermesNetworking.Networking.Packets.Handler;
 
 namespace HermesNetworking.Networking.Connection
 {

@@ -1,4 +1,5 @@
 ﻿using HermesNetworking.Networking.Packets.Data;
+using HermesNetworking.Networking.Packets.Serialization;
 
 namespace HermesNetworking.Networking.Packets.Parser
 {
@@ -6,7 +7,7 @@ namespace HermesNetworking.Networking.Packets.Parser
     {
         public PacketData Parse(byte[] buf)
         {
-            return null;
+            return GenericSerializer.GetObject<PacketData>(buf);
         }
     }
 }
