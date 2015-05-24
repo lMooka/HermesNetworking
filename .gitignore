@@ -1,5 +1,5 @@
-NetworkingLibrary/bin/*
-NetworkingLibrary/bin/Debug*
-NetworkingLibrary/bin/Release*
-NetworkingLibrary/obj/*
+HermesNetworking/bin/*
+HermesNetworking/bin/Debug*
+HermesNetworking/bin/Release*
+HermesNetworking/obj/*
 *.v11.suo

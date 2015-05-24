@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermesNetworking", "NetworkingLibrary\HermesNetworking.csproj", "{9393C49B-041E-443D-AAC6-4DE528BC41CA}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HermesNetworking", "HermesNetworking\HermesNetworking.csproj", "{9393C49B-041E-443D-AAC6-4DE528BC41CA}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
