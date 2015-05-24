@@ -1,0 +1,5 @@
+C:\Users\Guilherme\Dropbox\Coding\Codes\C#\HermesNetworking\NetworkingLibrary\obj\Debug\HermesNetworking.csprojResolveAssemblyReference.cache
+C:\Users\Guilherme\Dropbox\Coding\Codes\C#\HermesNetworking\NetworkingLibrary\bin\Debug\HermesNetworking.dll
+C:\Users\Guilherme\Dropbox\Coding\Codes\C#\HermesNetworking\NetworkingLibrary\bin\Debug\HermesNetworking.pdb
+C:\Users\Guilherme\Dropbox\Coding\Codes\C#\HermesNetworking\NetworkingLibrary\obj\Debug\HermesNetworking.dll
+C:\Users\Guilherme\Dropbox\Coding\Codes\C#\HermesNetworking\NetworkingLibrary\obj\Debug\HermesNetworking.pdb

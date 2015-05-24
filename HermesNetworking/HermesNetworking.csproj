@@ -39,8 +39,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Networking\Action\IPacketAction.cs" />
+    <Compile Include="Networking\Connection\AsyncConnection.cs" />
+    <Compile Include="Networking\Connection\IConnection.cs" />
+    <Compile Include="Networking\Packets\Data\GenericPacketData.cs" />
+    <Compile Include="Networking\Packets\Data\PacketData.cs" />
+    <Compile Include="Networking\Packets\Packets\IPacket.cs" />
+    <Compile Include="Networking\Packets\Parser\GenericPacketParser.cs" />
+    <Compile Include="Networking\Packets\Serialization\GenericSerializer.cs" />
+    <Compile Include="Networking\NetworkingConfig.cs" />
+    <Compile Include="Networking\Packets\Packets\GenericPacket.cs" />
+    <Compile Include="Networking\Packets\Listener\PacketHandler.cs" />
+    <Compile Include="Networking\Packets\Parser\IPacketParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
