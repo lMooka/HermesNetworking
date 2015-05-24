@@ -7,7 +7,7 @@ namespace HermesNetworking.Networking.Packets.Parser
     {
         public PacketData Parse(byte[] buf)
         {
-            return GenericSerializer.GetObject<PacketData>(buf);
+            return GenericSerializer.GetObject<GenericPacketData>(buf);
         }
     }
 }

@@ -4,6 +4,7 @@ using HermesNetworking.Networking.Packets.Data;
 
 namespace HermesNetworking.Networking.Packets
 {
+    [Serializable()]
     public class GenericPacket : IPacket
     {
         protected PacketData Data;

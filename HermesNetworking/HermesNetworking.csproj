@@ -41,7 +41,10 @@
   <ItemGroup>
     <Compile Include="Networking\Action\IPacketAction.cs" />
     <Compile Include="Networking\Connection\AsyncConnection.cs" />
+    <Compile Include="Networking\Connection\HermesClient.cs" />
+    <Compile Include="Networking\Connection\HermesServer.cs" />
     <Compile Include="Networking\Connection\IConnection.cs" />
+    <Compile Include="Networking\Connection\AsyncP2PClient.cs" />
     <Compile Include="Networking\Packets\Data\GenericPacketData.cs" />
     <Compile Include="Networking\Packets\Data\PacketData.cs" />
     <Compile Include="Networking\Packets\Packets\IPacket.cs" />
@@ -49,7 +52,7 @@
     <Compile Include="Networking\Packets\Serialization\GenericSerializer.cs" />
     <Compile Include="Networking\NetworkingConfig.cs" />
     <Compile Include="Networking\Packets\Packets\GenericPacket.cs" />
-    <Compile Include="Networking\Packets\Listener\PacketHandler.cs" />
+    <Compile Include="Networking\Packets\Handler\PacketHandler.cs" />
     <Compile Include="Networking\Packets\Parser\IPacketParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

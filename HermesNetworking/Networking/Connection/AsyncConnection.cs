@@ -7,13 +7,12 @@ namespace HermesNetworking.Networking.Connection
 {
     public class AsyncConnection : IDisposable, IConnection
     {
-        public int ConnectionId { get; set; }
         public Socket ConnectionSocket { get; set; }
         public PacketHandler Handler { get; set; }
 
         protected byte[] buffer;
 
-        public AsyncConnection(Socket socket, PacketHandler listener)
+        public AsyncConnection(Socket socket, PacketHandler handler)
         {
             this.ConnectionSocket = socket;
             buffer = new byte[HermesConfig.PACKET_BUFFER_SIZE];
@@ -39,7 +38,7 @@ namespace HermesNetworking.Networking.Connection
             }
         }
 
-        public void Activate()
+        public void GetReady()
         {
             ConnectionSocket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, ReceivedCallback, ConnectionSocket);
         }
@@ -59,6 +58,12 @@ namespace HermesNetworking.Networking.Connection
         public void Send(IPacket packet)
         {
             ConnectionSocket.Send(packet.GetBuffer());
+        }
+
+
+        public void Disconnect()
+        {
+            Dispose();
         }
     }
 }
