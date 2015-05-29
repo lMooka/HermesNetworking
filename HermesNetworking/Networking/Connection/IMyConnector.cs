@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace HermesNetworking.Networking.Connection
 {
-    public class HermesServer
+    public interface IMyConnector
     {
+        void Connect(string ip, int port);
     }
 }

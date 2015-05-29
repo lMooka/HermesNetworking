@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HermesNetworking.Networking.Packets.Data
+namespace HermesNetworking.Networking.Connection
 {
-    public class GenericPacketData : PacketData
+    public interface IMyListener
     {
-        
+        void Listen(int port, int backlog);
     }
 }

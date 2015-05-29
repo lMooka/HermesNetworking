@@ -4,9 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HermesNetworking.Networking.Connection
+namespace HermesNetworking.Networking.Action
 {
-    public class HermesClient
+    public interface IMyPacketAction
     {
+        void Action();
     }
 }

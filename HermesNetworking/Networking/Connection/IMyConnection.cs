@@ -6,12 +6,12 @@ using HermesNetworking.Networking.Packets.Handler;
 
 namespace HermesNetworking.Networking.Connection
 {
-    public interface IConnection
+    public interface IMyConnection
     {
-        Socket ConnectionSocket { get; set; }
-        PacketHandler Handler { get; set; }
+        Socket MySocket { get; set; }
+        IMyPacketHandler MyPacketHandler { get; set; }
 
-        void GetReady();
+        void WaitNextPacket();
         void Disconnect();
     }
 }

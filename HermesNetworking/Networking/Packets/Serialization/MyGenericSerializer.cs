@@ -4,9 +4,19 @@ using System.Runtime.Serialization.Formatters.Binary;
 
 namespace HermesNetworking.Networking.Packets.Serialization
 {
-    public static class GenericSerializer
+    public class MyGenericSerializer : IMyPacketSerializer
     {
-        public static byte[] GetBinary(object obj)
+        public byte[] Serialize(IMyPacket packet)
+        {
+            return GetBinary(packet);
+        }
+
+        public IMyPacket Deserialize(byte[] buf)
+        {
+            return GetObject<IMyPacket>(buf);
+        }
+
+        protected byte[] GetBinary(object obj)
         {
             MemoryStream ms = new MemoryStream();
 
@@ -14,7 +24,7 @@ namespace HermesNetworking.Networking.Packets.Serialization
             return ms.ToArray();
         }
 
-        public static T GetObject<T>(byte[] bytes)
+        protected T GetObject<T>(byte[] bytes)
         {
             using (MemoryStream memStream = new MemoryStream(bytes))
             {
@@ -22,7 +32,7 @@ namespace HermesNetworking.Networking.Packets.Serialization
             }
         }
 
-        public static int GetByteLength(object obj)
+        protected int GetByteLength(object obj)
         {
             MemoryStream ms = new MemoryStream();
 

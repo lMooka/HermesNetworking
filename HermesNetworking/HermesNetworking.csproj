@@ -39,21 +39,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Networking\Action\IPacketAction.cs" />
-    <Compile Include="Networking\Connection\AsyncConnection.cs" />
-    <Compile Include="Networking\Connection\HermesClient.cs" />
-    <Compile Include="Networking\Connection\HermesServer.cs" />
-    <Compile Include="Networking\Connection\IConnection.cs" />
-    <Compile Include="Networking\Connection\AsyncP2PClient.cs" />
-    <Compile Include="Networking\Packets\Data\GenericPacketData.cs" />
-    <Compile Include="Networking\Packets\Data\PacketData.cs" />
-    <Compile Include="Networking\Packets\Packets\IPacket.cs" />
-    <Compile Include="Networking\Packets\Parser\GenericPacketParser.cs" />
-    <Compile Include="Networking\Packets\Serialization\GenericSerializer.cs" />
+    <Compile Include="Networking\Action\IMyPacketAction.cs" />
+    <Compile Include="Networking\Connection\MyAsyncConnection.cs" />
+    <Compile Include="Networking\Connection\MyAsyncTCPListener.cs" />
+    <Compile Include="Networking\Connection\IMyConnection.cs" />
+    <Compile Include="Networking\Connection\IMyConnector.cs" />
+    <Compile Include="Networking\Connection\MyAsyncConnectionBuilder.cs" />
+    <Compile Include="Networking\Connection\MyConnectionBuilder.cs" />
+    <Compile Include="Networking\Connection\MyAsyncConnector.cs" />
+    <Compile Include="Networking\Connection\MyP2PManager.cs" />
+    <Compile Include="Networking\Connection\IMyConnectionManager.cs" />
+    <Compile Include="Networking\Connection\IMyListener.cs" />
+    <Compile Include="Networking\Packets\Data\IMyPacketData.cs" />
+    <Compile Include="Networking\Packets\Packets\IMyPacket.cs" />
+    <Compile Include="Networking\Packets\Serialization\MyGenericSerializer.cs" />
     <Compile Include="Networking\NetworkingConfig.cs" />
-    <Compile Include="Networking\Packets\Packets\GenericPacket.cs" />
-    <Compile Include="Networking\Packets\Handler\PacketHandler.cs" />
-    <Compile Include="Networking\Packets\Parser\IPacketParser.cs" />
+    <Compile Include="Networking\Packets\Handler\IMyPacketHandler.cs" />
+    <Compile Include="Networking\Packets\Serialization\IMyPacketSerializer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />
