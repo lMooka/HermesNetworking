@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HermesNetworking.Networking.Action
+namespace HermesNetworking.Networking.Connection
 {
-    public interface IPacketAction
+    public interface IMyListener
     {
-        void Action();
+        void Listen(int port, int backlog);
     }
 }

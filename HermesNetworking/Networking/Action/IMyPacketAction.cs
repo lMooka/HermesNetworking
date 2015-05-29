@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HermesNetworking.Networking.Packets.Data
+namespace HermesNetworking.Networking.Action
 {
-    public class GenericPacketData : PacketData
+    public interface IMyPacketAction
     {
-        
+        void Action();
     }
 }

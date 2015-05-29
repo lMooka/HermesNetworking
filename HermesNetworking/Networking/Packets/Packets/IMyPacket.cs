@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HermesNetworking.Networking.Packets
 {
-    public interface IPacket
+    public interface IMyPacket
     {
         int GetId();
         int GetSize();

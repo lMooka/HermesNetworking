@@ -2,20 +2,21 @@
 using System.Net.Sockets;
 using HermesNetworking.Networking.Packets;
 using HermesNetworking.Networking.Packets.Handler;
+using HermesNetworking.Networking.Packets.Serialization;
 
 namespace HermesNetworking.Networking.Connection
 {
-    public class AsyncConnection : IDisposable, IConnection
+    public class MyAsyncConnection : IMyConnection
     {
-        public int ConnectionId { get; set; }
-        public Socket ConnectionSocket { get; set; }
-        public PacketHandler Handler { get; set; }
+        public Socket MySocket { get; set; }
+        public IMyPacketSerializer MyPacketSerializer { get; set; }
+        public IMyPacketHandler MyPacketHandler { get; set; }
 
         protected byte[] buffer;
 
-        public AsyncConnection(Socket socket, PacketHandler listener)
+        public MyAsyncConnection(Socket socket, IMyPacketHandler handler)
         {
-            this.ConnectionSocket = socket;
+            this.MySocket = socket;
             buffer = new byte[HermesConfig.PACKET_BUFFER_SIZE];
         }
 
@@ -29,7 +30,7 @@ namespace HermesNetworking.Networking.Connection
                 byte[] buf = new byte[bufSize];
                 Buffer.BlockCopy(buffer, 0, buf, 0, bufSize);
 
-                Handler.PacketReceived(buf);
+                MyPacketSerializer.Deserialize(buf);
                 
                 buffer = new byte[HermesConfig.PACKET_BUFFER_SIZE];
                 rcvSocket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, ReceivedCallback, rcvSocket);
@@ -39,26 +40,19 @@ namespace HermesNetworking.Networking.Connection
             }
         }
 
-        public void Activate()
+        public void WaitNextPacket()
         {
-            ConnectionSocket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, ReceivedCallback, ConnectionSocket);
+            MySocket.BeginReceive(buffer, 0, buffer.Length, SocketFlags.None, ReceivedCallback, MySocket);
         }
 
-        public void Dispose()
+        public void Send(IMyPacket packet)
         {
-            try
-            {
-                ConnectionSocket.Disconnect(false);
-                ConnectionSocket.Dispose();
-                this.Dispose();
-            }
-            catch (Exception)
-            { }
+            MySocket.Send(packet.GetBuffer());
         }
 
-        public void Send(IPacket packet)
+        public void Disconnect()
         {
-            ConnectionSocket.Send(packet.GetBuffer());
+            MySocket.Disconnect(false);
         }
     }
 }
